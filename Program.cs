@@ -1,4 +1,6 @@
-﻿DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
+﻿using System;
+
+DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
 Console.WriteLine(d);
 Console.WriteLine("1) Date: " + d.Date);
 Console.WriteLine("2) Day: " + d.Day);
@@ -28,3 +30,44 @@ Console.WriteLine(s4);
 Console.WriteLine(s5);
 Console.WriteLine(s6);
 Console.WriteLine(s7);
+Console.WriteLine();
+DateTime d2 = d.AddDays(1);
+Console.WriteLine(d2);
+DateTime d3 = d.AddYears(7);
+Console.WriteLine(d3);
+Console.WriteLine();
+
+DateTime d4 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
+DateTime d5 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Utc);
+DateTime d6 = new DateTime(2000, 8, 15, 13, 5, 58);
+Console.WriteLine("d4: " + d4);
+Console.WriteLine("d4 Kind: " + d4.Kind);
+Console.WriteLine("d4 to Local: " + d4.ToLocalTime());
+Console.WriteLine("d4 to Utc: " + d4.ToUniversalTime());
+Console.WriteLine();
+Console.WriteLine("d5: " + d5);
+Console.WriteLine("d5 Kind: " + d5.Kind);
+Console.WriteLine("d5 to Local: " + d5.ToLocalTime());
+Console.WriteLine("d5 to Utc: " + d5.ToUniversalTime());
+Console.WriteLine();
+Console.WriteLine("d6: " + d6);
+Console.WriteLine("d6 Kind: " + d6.Kind);
+Console.WriteLine("d6 to Local: " + d6.ToLocalTime());
+Console.WriteLine("d6 to Utc: " + d6.ToUniversalTime());
+
+Console.WriteLine();
+
+DateTime d7 = DateTime.Parse("2000-08-15 13:05:58");
+DateTime d8 = DateTime.Parse("2000-08-15T13:05:58Z"); // cria local DateTime
+Console.WriteLine("d7: " + d7);
+Console.WriteLine("d7 Kind: " + d7.Kind);
+Console.WriteLine("d7 to Local: " + d7.ToLocalTime());
+Console.WriteLine("d7 to Utc: " + d7.ToUniversalTime());
+Console.WriteLine();
+Console.WriteLine("d8: " + d8);
+Console.WriteLine("d8 Kind: " + d8.Kind);
+Console.WriteLine("d8 to Local: " + d8.ToLocalTime());
+Console.WriteLine("d8 to Utc: " + d8.ToUniversalTime());
+Console.WriteLine();
+Console.WriteLine(d8.ToString("yyyy-MM-ddTHH:mm:ssZ")); // cuidado!
+Console.WriteLine(d8.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"));
